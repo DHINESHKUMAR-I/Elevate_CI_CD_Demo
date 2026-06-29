@@ -28,6 +28,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: Give execute permission to Maven Wrapper
+        run: chmod +x mvnw
+
       - name: Build with Maven
         run: ./mvnw clean package
 
